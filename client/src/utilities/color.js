@@ -1,5 +1,3 @@
-// Tiny hex color helpers for the preview's metallic and wood finishes.
-
 const clamp = (value) => Math.max(0, Math.min(255, Math.round(value)))
 
 const parse = (hex) => {
@@ -11,7 +9,6 @@ const parse = (hex) => {
 
 const toHex = ([r, g, b]) => `#${[r, g, b].map((v) => clamp(v).toString(16).padStart(2, '0')).join('')}`
 
-// amount > 0 mixes toward white, amount < 0 mixes toward black (range -1..1).
 export const shade = (hex, amount) => {
     const target = amount > 0 ? 255 : 0
     const t = Math.abs(amount)

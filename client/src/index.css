@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-/* ClackLab theme tokens, layered on top of PicoCSS */
 :root,
 html[data-theme='light'] {
     --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -22,7 +21,6 @@ html[data-theme='light'] {
     --cl-shadow: 0 8px 24px rgba(80, 60, 160, 0.08);
     --cl-shadow-lift: 0 16px 36px rgba(80, 60, 160, 0.14);
 
-    /* Pico overrides */
     --primary: var(--cl-accent);
     --primary-hover: var(--cl-accent-deep);
     --primary-focus: var(--cl-accent-ring);

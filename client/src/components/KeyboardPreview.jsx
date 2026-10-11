@@ -2,7 +2,6 @@ import React, { useId } from 'react'
 import { buildLayout, U } from '../utilities/keyboardLayouts'
 import { shade, RAINBOW } from '../utilities/color'
 
-// Fixed canvas so a 60% board looks small and a full-size board looks wide.
 const CANVAS_W = 24.5 * U
 const CANVAS_H = 9.5 * U
 const BEZEL = 0.45 * U
@@ -12,10 +11,7 @@ const ACCENT = '#6d5ae6'
 const DEFAULT_CASE = { color: '#23252b', material: 'plastic' }
 const DEFAULT_CAPS = { alpha: '#3a3d46', mod: '#2a2d35', accent: '#f0a35e', legend: '#f4f4f6' }
 
-// Renders the selected build as an SVG. `build` maps each feature slug to the
-// chosen option object; missing options fall back to sensible defaults.
 const KeyboardPreview = ({ build = {}, compact = false, className = '' }) => {
-    // Gradient/filter ids must be unique when several previews share a page.
     const uid = useId().replace(/:/g, '')
     const ids = {
         rainbow: `rainbow-${uid}`,
@@ -97,7 +93,6 @@ const KeyboardPreview = ({ build = {}, compact = false, className = '' }) => {
                 </filter>
             </defs>
 
-            {/* Underglow halo sits behind everything */}
             {underglow && (
                 <rect
                     x={caseX - 8} y={caseY - 8} width={caseW + 16} height={caseH + 16}
@@ -108,7 +103,6 @@ const KeyboardPreview = ({ build = {}, compact = false, className = '' }) => {
                 />
             )}
 
-            {/* Coiled cable for wired boards */}
             {!wireless && (
                 <g>
                     <path
@@ -119,7 +113,6 @@ const KeyboardPreview = ({ build = {}, compact = false, className = '' }) => {
                 </g>
             )}
 
-            {/* Case */}
             <rect
                 x={caseX} y={caseY} width={caseW} height={caseH} rx={caseRadius}
                 fill={caseFill} fillOpacity={caseOpacity} stroke={caseStroke} strokeWidth='2'
@@ -134,7 +127,6 @@ const KeyboardPreview = ({ build = {}, compact = false, className = '' }) => {
                 />
             )}
 
-            {/* Plate and backlight showing through the gaps between keys */}
             <rect x={keysX} y={keysY} width={boardW} height={boardH} rx='6' fill='#1b1c21' />
             {glow !== 'none' && (
                 <rect
@@ -145,7 +137,6 @@ const KeyboardPreview = ({ build = {}, compact = false, className = '' }) => {
                 />
             )}
 
-            {/* Keycaps */}
             {layout.keys.map((k, index) => {
                 const x = keysX + k.x * U + KEY_GAP
                 const y = keysY + k.y * U + KEY_GAP
@@ -174,7 +165,6 @@ const KeyboardPreview = ({ build = {}, compact = false, className = '' }) => {
                 )
             })}
 
-            {/* Wireless indicator */}
             {wireless && (
                 <g
                     transform={`translate(${caseX + caseW - 26}, ${caseY - 16})`}

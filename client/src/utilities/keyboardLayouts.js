@@ -1,8 +1,4 @@
-// Key geometry for the SVG preview, measured in keyboard units (1u = one
-// standard keycap). Each layout returns its width/height in units plus a flat
-// list of keys with x/y positions.
-
-export const U = 40 // pixels per unit inside the SVG viewBox
+export const U = 40
 
 const key = (label, w = 1, type = 'alpha', h = 1) => ({ label, w, h, type })
 const gap = (w) => ({ gap: true, w })
@@ -13,8 +9,6 @@ const TOP_ROW = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']']
 const HOME_ROW = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'"]
 const BOTTOM_ROW = ['Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/']
 
-// The 15u-wide block shared by every layout. `escInCorner` is true when there is
-// no function row, so Esc takes the top-left spot.
 const mainBlock = (escInCorner) => [
     [key(escInCorner ? 'Esc' : '`', 1, escInCorner ? 'accent' : 'alpha'), ...alphas(NUMBER_ROW), key('⌫', 2, 'mod')],
     [key('Tab', 1.5, 'mod'), ...alphas(TOP_ROW), key('\\', 1.5)],
@@ -51,7 +45,6 @@ const numpad = [
     [key('0', 2), key('.')]
 ]
 
-// Lays rows out left-to-right, top-to-bottom from an origin (in units).
 const place = (rows, originX, originY) => {
     const keys = []
     rows.forEach((row, rowIndex) => {
@@ -111,5 +104,4 @@ const LAYOUTS = {
 
 export const buildLayout = (slug) => (LAYOUTS[slug] ?? sixtyPercent)()
 
-// Relative board width, used by the tiny layout swatch in the option chips.
 export const layoutWidthPercent = (slug) => Math.round((buildLayout(slug).width / fullSize().width) * 100)

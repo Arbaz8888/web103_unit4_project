@@ -6,7 +6,6 @@ const OPTION_COLUMNS = `
     o.price::float AS price, o.meta, o.sort_order
 `
 
-// Every feature with its options nested, plus the base price the client needs for totals.
 const getFeatures = async (req, res) => {
     try {
         const { rows: features } = await pool.query(

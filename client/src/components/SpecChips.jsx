@@ -1,7 +1,6 @@
 import React from 'react'
 import Swatch from './Swatch'
 
-// One chip per feature showing the chosen option.
 const SpecChips = ({ build, features, compact = false }) => (
     <ul className={`spec-chips${compact ? ' compact' : ''}`}>
         {features.map((feature) => {

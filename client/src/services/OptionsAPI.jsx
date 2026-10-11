@@ -1,6 +1,5 @@
 import request from './request'
 
-// { basePrice, features: [{ slug, name, description, options: [...] }] }
 const getFeatures = async () => {
     return request('/api/features')
 }

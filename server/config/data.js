@@ -1,6 +1,3 @@
-// Seed data for the ClackLab database. `reset.js` drops and recreates the
-// tables from this file, so edit here and re-run `npm run reset` to change options.
-
 export const features = [
     { slug: 'layout', name: 'Layout', description: 'How many keys live on the deck.', sort_order: 1 },
     { slug: 'case', name: 'Case', description: 'Material and finish of the housing.', sort_order: 2 },
@@ -11,13 +8,11 @@ export const features = [
 ]
 
 export const options = [
-    // Layout
     { feature: 'layout', slug: '60', name: '60% Compact', price: 0, description: '61 keys. No arrows, no F-row.', meta: { keys: 61 }, sort_order: 1 },
     { feature: 'layout', slug: '65', name: '65%', price: 15, description: '68 keys with a dedicated arrow cluster.', meta: { keys: 68 }, sort_order: 2 },
     { feature: 'layout', slug: 'tkl', name: 'Tenkeyless', price: 30, description: '87 keys. Everything but the numpad.', meta: { keys: 87 }, sort_order: 3 },
     { feature: 'layout', slug: 'full', name: 'Full-size', price: 45, description: '104 keys including the numpad.', meta: { keys: 104 }, sort_order: 4 },
 
-    // Case
     { feature: 'case', slug: 'plastic-black', name: 'Plastic · Black', price: 0, description: 'Lightweight ABS shell.', meta: { color: '#23252b', material: 'plastic' }, sort_order: 1 },
     { feature: 'case', slug: 'plastic-white', name: 'Plastic · White', price: 0, description: 'Lightweight ABS shell.', meta: { color: '#f2f1ec', material: 'plastic' }, sort_order: 2 },
     { feature: 'case', slug: 'aluminum-silver', name: 'Aluminum · Silver', price: 60, description: 'CNC-milled, anodized.', meta: { color: '#c9ced6', material: 'aluminum' }, sort_order: 3 },
@@ -25,7 +20,6 @@ export const options = [
     { feature: 'case', slug: 'walnut', name: 'Walnut Wood', price: 80, description: 'Solid walnut, hand oiled.', meta: { color: '#8a5a33', material: 'wood' }, sort_order: 5 },
     { feature: 'case', slug: 'acrylic', name: 'Frosted Acrylic', price: 45, description: 'Translucent shell that diffuses light.', meta: { color: '#e7f0f7', material: 'acrylic' }, sort_order: 6 },
 
-    // Keycaps
     { feature: 'keycaps', slug: 'midnight', name: 'Midnight', price: 0, description: 'Charcoal with amber accents.', meta: { alpha: '#3a3d46', mod: '#2a2d35', accent: '#f0a35e', legend: '#f4f4f6' }, sort_order: 1 },
     { feature: 'keycaps', slug: 'cloud', name: 'Cloud', price: 0, description: 'Soft white and grey.', meta: { alpha: '#f6f6f3', mod: '#d9dbd6', accent: '#8fb7e6', legend: '#3a3d46' }, sort_order: 2 },
     { feature: 'keycaps', slug: 'pastel-sunset', name: 'Pastel Sunset', price: 35, description: 'Pink, lavender and mint.', meta: { alpha: '#fde2e8', mod: '#d9ccfb', accent: '#b9f0d8', legend: '#5a4a78' }, sort_order: 3 },
@@ -33,26 +27,21 @@ export const options = [
     { feature: 'keycaps', slug: 'blackout', name: 'Blackout', price: 20, description: 'Black on black. Stealth mode.', meta: { alpha: '#17181c', mod: '#101114', accent: '#2a2c33', legend: '#3c3f48' }, sort_order: 5 },
     { feature: 'keycaps', slug: 'pudding', name: 'Pudding', price: 30, description: 'Translucent sides that let the light through.', meta: { alpha: '#ffffff', mod: '#ffffff', accent: '#ffffff', legend: '#1f2024', translucent: true }, sort_order: 6 },
 
-    // Switches
     { feature: 'switches', slug: 'linear-red', name: 'Linear Red', price: 0, description: 'Smooth, light and quiet.', meta: { color: '#e5484d' }, sort_order: 1 },
     { feature: 'switches', slug: 'tactile-brown', name: 'Tactile Brown', price: 10, description: 'A gentle bump on every press.', meta: { color: '#9a6b3f' }, sort_order: 2 },
     { feature: 'switches', slug: 'clicky-blue', name: 'Clicky Blue', price: 10, description: 'Loud and proud.', meta: { color: '#3b82f6' }, sort_order: 3 },
     { feature: 'switches', slug: 'silent-linear', name: 'Silent Linear', price: 25, description: 'Dampened for shared spaces.', meta: { color: '#6b7280' }, sort_order: 4 },
     { feature: 'switches', slug: 'hall-effect', name: 'Hall-Effect Magnetic', price: 40, description: 'Adjustable actuation and rapid trigger.', meta: { color: '#8b5cf6' }, sort_order: 5 },
 
-    // Lighting
     { feature: 'lighting', slug: 'none', name: 'No lighting', price: 0, description: 'Keep it classic.', meta: { glow: 'none' }, sort_order: 1 },
     { feature: 'lighting', slug: 'white', name: 'White backlight', price: 15, description: 'Clean single-color glow.', meta: { glow: 'white' }, sort_order: 2 },
     { feature: 'lighting', slug: 'rgb', name: 'Per-key RGB', price: 35, description: 'Every key, any color.', meta: { glow: 'rgb' }, sort_order: 3 },
     { feature: 'lighting', slug: 'rgb-underglow', name: 'Per-key RGB + Underglow', price: 55, description: 'RGB keys plus a halo around the case.', meta: { glow: 'rgb', underglow: true }, sort_order: 4 },
 
-    // Connectivity
     { feature: 'connectivity', slug: 'wired', name: 'Wired USB-C', price: 0, description: 'Detachable coiled cable.', meta: {}, sort_order: 1 },
     { feature: 'connectivity', slug: 'wireless', name: 'Wireless', price: 25, description: 'Bluetooth 5 and 2.4 GHz dongle.', meta: {}, sort_order: 2 }
 ]
 
-// Directional rules: while `when_option` is selected for `when_feature`,
-// `blocks_option` is not allowed for `blocks_feature`.
 export const incompatibilities = [
     {
         when_feature: 'case', when_option: 'walnut',

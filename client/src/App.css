@@ -1,5 +1,3 @@
-/* ---------- Page scaffolding ---------- */
-
 .app {
     min-height: 100vh;
     display: flex;
@@ -56,8 +54,6 @@
     font-size: 0.88rem;
     margin: 0;
 }
-
-/* ---------- Buttons ---------- */
 
 .btn {
     display: inline-flex;
@@ -148,8 +144,6 @@
     font-size: 0.85rem;
 }
 
-/* ---------- Cards ---------- */
-
 .card,
 .preview-card,
 .price-card {
@@ -169,8 +163,6 @@
     font-weight: 800;
     margin: 0 0 0.75rem;
 }
-
-/* ---------- Keyboard preview ---------- */
 
 .keyboard-preview {
     width: 100%;
@@ -208,8 +200,6 @@
     background: var(--cl-danger-soft);
     color: var(--cl-danger);
 }
-
-/* ---------- Swatches and chips ---------- */
 
 .swatch {
     width: 24px;
@@ -294,8 +284,6 @@
     font-weight: 600;
     color: var(--cl-ink);
 }
-
-/* ---------- Builder (create / edit) ---------- */
 
 .builder {
     display: grid;
@@ -486,8 +474,6 @@
     font-weight: 600;
 }
 
-/* ---------- Price ---------- */
-
 .price-lines {
     list-style: none;
     padding: 0;
@@ -526,8 +512,6 @@
     letter-spacing: -0.02em;
     color: var(--cl-accent-deep);
 }
-
-/* ---------- Form footer and alerts ---------- */
 
 .form-actions {
     position: sticky;
@@ -588,8 +572,6 @@
 .alert li {
     margin: 0.15rem 0;
 }
-
-/* ---------- Saved keyboards list ---------- */
 
 .kb-grid {
     display: grid;
@@ -662,8 +644,6 @@
     flex-wrap: wrap;
     margin-top: 0.25rem;
 }
-
-/* ---------- Details page ---------- */
 
 .details {
     display: grid;
@@ -739,8 +719,6 @@
     font-size: 0.8rem;
 }
 
-/* ---------- Modal ---------- */
-
 .modal-backdrop {
     position: fixed;
     inset: 0;
@@ -781,8 +759,6 @@
     margin-top: 1.25rem;
 }
 
-/* ---------- Status ---------- */
-
 .loading {
     display: flex;
     align-items: center;
@@ -821,8 +797,6 @@
     color: var(--cl-ink-soft);
     margin: 0 0 1.25rem;
 }
-
-/* ---------- Responsive ---------- */
 
 @media (max-width: 960px) {
     .builder,

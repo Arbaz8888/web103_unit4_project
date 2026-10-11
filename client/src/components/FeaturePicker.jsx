@@ -3,9 +3,6 @@ import Swatch from './Swatch'
 import { formatOptionPrice } from '../utilities/calcPrice'
 import { findConflicts, getBlockingRules } from '../utilities/validation'
 
-// One section of the builder: every option for a single feature.
-// Options ruled out by the current selection are greyed out before submit;
-// an already-selected option that becomes invalid is flagged in red.
 const FeaturePicker = ({ feature, selection, rules, onSelect, optionName }) => {
     const selected = selection[feature.slug]
     const conflicts = findConflicts(selection, rules).filter((rule) => rule.blocks_feature === feature.slug)

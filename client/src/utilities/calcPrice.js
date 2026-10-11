@@ -1,6 +1,3 @@
-// Price helpers. Every keyboard starts at the catalog's base price and each
-// selected option adds its own price on top.
-
 export const getOption = (features, featureSlug, optionSlug) => {
     const feature = features.find((f) => f.slug === featureSlug)
     return feature?.options.find((o) => o.slug === optionSlug)
@@ -10,7 +7,6 @@ export const getOptionPrice = (features, featureSlug, optionSlug) => {
     return getOption(features, featureSlug, optionSlug)?.price ?? 0
 }
 
-// Line items for the price summary: base price first, then one row per feature.
 export const priceBreakdown = (selection, features, basePrice) => {
     const lines = [{ key: 'base', label: 'Base keyboard', price: basePrice }]
 

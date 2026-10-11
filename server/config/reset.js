@@ -40,7 +40,6 @@ const createTables = async () => {
         )
     `)
 
-    // "case" is a reserved word in SQL, so that feature is stored as case_style.
     await pool.query(`
         CREATE TABLE keyboards (
             id SERIAL PRIMARY KEY,

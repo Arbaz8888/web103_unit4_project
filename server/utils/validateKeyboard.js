@@ -1,15 +1,12 @@
 import { pool } from '../config/database.js'
 import { BASE_PRICE, FEATURE_SLUGS, roundPrice } from './pricing.js'
 
-// A rule fires when its "when" option and its "blocks" option are both selected.
 export const findConflicts = (selection, rules) =>
     rules.filter((rule) =>
         selection[rule.when_feature] === rule.when_option &&
         selection[rule.blocks_feature] === rule.blocks_option
     )
 
-// Checks a request body for a keyboard. Returns the cleaned values, the
-// server-computed price, and any error messages (empty when valid).
 export const validateKeyboard = async (body = {}) => {
     const errors = []
 

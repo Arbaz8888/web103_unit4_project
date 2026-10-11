@@ -34,7 +34,6 @@ export const WirelessIcon = () => (
     </svg>
 )
 
-// A small visual for an option: a color dot, a layout bar, or an icon.
 const Swatch = ({ feature, option }) => {
     if (!option) return <span className='swatch' aria-hidden='true' />
     const meta = option.meta ?? {}

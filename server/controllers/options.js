@@ -5,8 +5,6 @@ const OPTION_COLUMNS = `
     o.price::float AS price, o.meta, o.sort_order
 `
 
-// GET /api/options           -> every option
-// GET /api/options?feature=x -> options for one feature
 const getOptions = async (req, res) => {
     try {
         const { feature } = req.query

@@ -1,7 +1,6 @@
 import { pool } from '../config/database.js'
 import { validateKeyboard } from '../utils/validateKeyboard.js'
 
-// case_style is exposed to the client as "case" so it lines up with the feature slug.
 const COLUMNS = `
     id, name, layout, case_style AS "case", keycaps, switches, lighting, connectivity,
     price::float AS price, created_at, updated_at

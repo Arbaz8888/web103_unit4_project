@@ -1,6 +1,3 @@
-// Helpers for moving between a saved keyboard record, the form's selection
-// (feature slug -> option slug), and a "build" (feature slug -> option object).
-
 export const defaultSelection = (features) =>
     Object.fromEntries(features.map((feature) => [feature.slug, feature.options[0]?.slug]))
 

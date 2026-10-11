@@ -1,8 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { getFeatures, getIncompatibilities } from '../services/OptionsAPI'
 
-// Loads the feature catalog (features, options, base price) and the
-// incompatibility rules once, and shares them with every page.
 const CatalogContext = createContext({
     basePrice: 0,
     features: [],

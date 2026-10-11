@@ -8,8 +8,6 @@ import { calcTotalPrice, formatPrice, getOption } from '../utilities/calcPrice'
 import { findConflicts, validateKeyboard, MAX_NAME_LENGTH } from '../utilities/validation'
 import { defaultSelection, pickSelection, resolveBuild, describeBuild } from '../utilities/selection'
 
-// Shared by the Create and Edit pages. `onSubmit` receives
-// { name, layout, case, keycaps, switches, lighting, connectivity } and may throw.
 const KeyboardForm = ({ initialValues, onSubmit, submitLabel = 'Save keyboard' }) => {
     const { basePrice, features, rules } = useCatalog()
 
@@ -46,7 +44,6 @@ const KeyboardForm = ({ initialValues, onSubmit, submitLabel = 'Save keyboard' }
         try {
             await onSubmit({ name: name.trim(), ...selection })
         } catch (error) {
-            // The API returns every problem it found; fall back to the message.
             setErrors(error.details?.errors?.length ? error.details.errors : [error.message])
         } finally {
             setSubmitting(false)

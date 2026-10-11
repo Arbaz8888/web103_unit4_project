@@ -39,7 +39,6 @@ if (process.env.NODE_ENV === 'production') {
     )
 }
 
-// Catches malformed JSON bodies and anything a route forgot to handle.
 app.use((error, req, res, next) => {
     res.status(error.status || 500).json({ error: error.message })
 })

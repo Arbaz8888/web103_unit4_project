@@ -5,7 +5,6 @@ import SpecChips from './SpecChips'
 import { formatPrice } from '../utilities/calcPrice'
 import { resolveBuild } from '../utilities/selection'
 
-// A saved keyboard in the list view, with edit and delete right on the card.
 const KeyboardCard = ({ keyboard, features, onDelete }) => {
     const build = resolveBuild(keyboard, features)
 
