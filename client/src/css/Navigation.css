@@ -1,7 +1,74 @@
-nav {
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 100vw;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 20px;
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--cl-line);
+}
+
+.topbar-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--cl-ink);
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: -0.02em;
+    padding: 0;
+}
+
+.brand:hover,
+.brand:focus {
+    color: var(--cl-accent-deep);
+    background: transparent;
+}
+
+.brand-mark {
+    font-size: 1.45rem;
+    line-height: 1;
+}
+
+.topbar-links {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.topbar .nav-link {
+    text-decoration: none;
+    padding: 0.5rem 0.95rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--cl-ink-soft);
+    background: transparent;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.topbar .nav-link:hover,
+.topbar .nav-link:focus {
+    background: #f1eefb;
+    color: var(--cl-ink);
+}
+
+.topbar .nav-link.active {
+    background: var(--cl-accent);
+    color: #ffffff;
+}
+
+@media (max-width: 480px) {
+    .brand-name { display: none; }
+    .topbar .nav-link { padding: 0.45rem 0.75rem; font-size: 0.85rem; }
 }

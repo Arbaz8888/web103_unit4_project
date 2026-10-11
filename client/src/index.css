@@ -1,68 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-#root {
-    --font-family: Rubik, Verdana, sans-serif;
-    --primary: rgb(115, 2, 12);
-    --primary-hover: black;
-    --color: white;
-    --h1-color: var(--color);
-    --h2-color: var(--color);
-    --h3-color: var(--color);
-    --card-background-color: rgba(0, 0, 0, 0.8);
-    --card-sectionning-background-color: rgba(0, 0, 0, 0.8);
-    --form-element-active-border-color: var(--color);
-    --form-element-placeholder-color: gray;
+/* ClackLab theme tokens, layered on top of PicoCSS */
+:root,
+html[data-theme='light'] {
+    --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+    --cl-bg: #f7f6fb;
+    --cl-ink: #221f33;
+    --cl-ink-soft: #645d7d;
+    --cl-card: #ffffff;
+    --cl-line: #e8e4f4;
+    --cl-accent: #6d5ae6;
+    --cl-accent-deep: #4b3ac4;
+    --cl-accent-soft: #ebe7ff;
+    --cl-accent-ring: rgba(109, 90, 230, 0.22);
+    --cl-mint: #c9f0dd;
+    --cl-rose: #ffd9e3;
+    --cl-danger: #c93c5c;
+    --cl-danger-soft: #ffe6ec;
+    --cl-radius: 18px;
+    --cl-shadow: 0 8px 24px rgba(80, 60, 160, 0.08);
+    --cl-shadow-lift: 0 16px 36px rgba(80, 60, 160, 0.14);
+
+    /* Pico overrides */
+    --primary: var(--cl-accent);
+    --primary-hover: var(--cl-accent-deep);
+    --primary-focus: var(--cl-accent-ring);
+    --primary-inverse: #ffffff;
+    --background-color: var(--cl-bg);
+    --color: var(--cl-ink);
+    --muted-color: var(--cl-ink-soft);
+    --h1-color: var(--cl-ink);
+    --h2-color: var(--cl-ink);
+    --h3-color: var(--cl-ink);
+    --card-background-color: var(--cl-card);
+    --card-border-color: var(--cl-line);
+    --form-element-background-color: #ffffff;
+    --form-element-border-color: #d9d4ea;
+    --form-element-active-border-color: var(--cl-accent);
+    --form-element-focus-color: var(--cl-accent-ring);
+    --form-element-color: var(--cl-ink);
+    --form-element-placeholder-color: #a39cbd;
+    --border-radius: 12px;
 }
 
-#root h1 {
-    font-size: 3rem;
-    margin-bottom: 0px;
+html {
+    scroll-behavior: smooth;
 }
 
-#root h2 {
-    margin-bottom: 0px;
-}
-
-#root h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0px;
-}
-
-#root p {
-    margin-bottom: 10px;
-}
-
-#root [role=button], #root button, #root input[type=submit] {
+body {
+    background:
+        radial-gradient(ellipse 60% 40% at 10% 0%, rgba(201, 188, 247, 0.35), transparent),
+        radial-gradient(ellipse 50% 35% at 90% 5%, rgba(201, 240, 221, 0.4), transparent),
+        var(--cl-bg);
+    color: var(--cl-ink);
     font-family: var(--font-family);
-    font-weight: 500;
-    text-transform: uppercase;
-    border: 2px solid transparent;
-    margin: 10px;
-    width: max-content;
+    min-height: 100vh;
 }
 
-#root [role=button]:hover, #root button:hover, #root input[type=submit]:hover {
-    border: 2px solid var(--color);
-}
-
-#root main {
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
-#root article {
-    text-align: left;
-    margin-bottom: 5px;
-}
-
-#root article header {
-    border-bottom: 0px;
-    margin-bottom: 10px;
-}
-
-#root article footer {
-    border-top: 0px;
-    margin-top: 0px;
-    display: flex;
+h1, h2, h3, h4 {
+    font-family: var(--font-family);
+    color: var(--cl-ink);
 }

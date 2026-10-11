@@ -1,40 +1,52 @@
 import React from 'react'
-import { useRoutes } from 'react-router-dom'
+import { useRoutes, Link } from 'react-router-dom'
 import Navigation from './components/Navigation'
-import ViewCars from './pages/ViewCars'
-import EditCar from './pages/EditCar'
-import CreateCar from './pages/CreateCar'
-import CarDetails from './pages/CarDetails'
+import { CatalogProvider } from './context/CatalogContext'
+import CreateKeyboard from './pages/CreateKeyboard'
+import ViewKeyboards from './pages/ViewKeyboards'
+import KeyboardDetails from './pages/KeyboardDetails'
+import EditKeyboard from './pages/EditKeyboard'
 import './App.css'
 
+const NotFound = () => (
+  <section className='page empty-state'>
+    <h2>That page doesn't exist</h2>
+    <p>Try the builder or your saved keyboards instead.</p>
+    <Link to='/' className='btn btn-primary'>Go to the builder</Link>
+  </section>
+)
+
 const App = () => {
-  let element = useRoutes([
+  const element = useRoutes([
     {
       path: '/',
-      element: <CreateCar title='BOLT BUCKET | Customize' />
+      element: <CreateKeyboard title='ClackLab | Customize' />
     },
     {
-      path:'/customcars',
-      element: <ViewCars title='BOLT BUCKET | Custom Cars' />
+      path: '/keyboards',
+      element: <ViewKeyboards title='ClackLab | Custom Keyboards' />
     },
     {
-      path: '/customcars/:id',
-      element: <CarDetails title='BOLT BUCKET | View' />
+      path: '/keyboards/:id',
+      element: <KeyboardDetails title='ClackLab | View' />
     },
     {
       path: '/edit/:id',
-      element: <EditCar title='BOLT BUCKET | Edit' />
+      element: <EditKeyboard title='ClackLab | Edit' />
+    },
+    {
+      path: '*',
+      element: <NotFound />
     }
   ])
 
   return (
-    <div className='app'>
-
-      <Navigation />
-
-      { element }
-
-    </div>
+    <CatalogProvider>
+      <div className='app'>
+        <Navigation />
+        <main className='app-main'>{element}</main>
+      </div>
+    </CatalogProvider>
   )
 }
 
