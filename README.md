@@ -4,7 +4,7 @@ Submitted by: **Arbaz Attar**
 
 About this web app: **ClackLab is a custom mechanical keyboard builder. Pick a layout (60% up to full-size), a case material and finish, a keycap colorway, switches, lighting and connectivity, and a live SVG preview plus a running price update with every click. Builds are saved to a Render PostgreSQL database through an Express REST API, and can be viewed, edited and deleted from both the list page and the detail page. Impossible combinations (a walnut case with underglow, Hall-effect switches on a wireless board, pudding keycaps with no backlight, and so on) are greyed out before you submit, flagged in red if an earlier change makes a selected option invalid, and rejected by the server with a clear message if a conflicting build is ever submitted.**
 
-Time spent: **X** hours
+Time spent: **5** hours
 
 ## Required Features
 
@@ -13,8 +13,8 @@ The following **required** functionality is completed:
 <!-- Make sure to check off completed functionality below -->
 - [x] **The web app uses React to display data from the API.**
 - [x] **The web app is connected to a PostgreSQL database, with an appropriately structured `CustomItem` table.**
-  - [ ]  **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
-  - [ ]  **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
+  - [x]  **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
+  - [x]  **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
 - [x] **Users can view **multiple** features of the `CustomItem` (e.g. car) they can customize, (e.g. wheels, exterior, etc.)**
 - [x] **Each customizable feature has multiple options to choose from (e.g. exterior could be red, blue, black, etc.)**
 - [x] **On selecting each option, the displayed visual icon for the `CustomItem` updates to match the option the user chose.**

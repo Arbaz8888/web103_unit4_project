@@ -24,3 +24,6 @@ dist-ssr
 *.sln
 *.sw?
 server/public
+
+# Raw screen recordings (too large for git)
+*.mov
